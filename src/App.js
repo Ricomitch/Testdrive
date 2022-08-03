@@ -1,10 +1,15 @@
+import React from 'react'
 import './App.css'
+import VehicleDetails from './components/VehicleDetails'
+import { ApplicationRootStyles } from './styling/styles'
+import DateDetails from './components/DateDetails'
 
 function App() {
   return (
-    <div className='App'>
-      <h1>Motive Test Drive Scheduler</h1>
-    </div>
+    <ApplicationRootStyles>
+      <VehicleDetails />
+      <DateDetails />
+    </ApplicationRootStyles>
   )
 }
 
