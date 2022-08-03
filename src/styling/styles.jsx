@@ -1,7 +1,20 @@
 import styled, { css } from 'styled-components'
 import dealerImage from '../Assets/istockphoto-1351218700-170667a.jpeg'
 
-export const Input = styled.select`
+export const Input = styled.input`
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 5px 0px;
+  padding: 0;
+  margin-bottom: 4px;
+`
+
+export const Select = styled.select`
   width: 100%;
   box-sizing: border-box;
   outline: none;
@@ -28,7 +41,11 @@ export const InputField = styled.div`
   border-radius: 15px;
   margin: 10px;
 `
-export const InputError = styled.div``
+export const InputError = styled.div`
+  font-size: 14px;
+  margin-top: 4px;
+  color: red;
+`
 
 export const Flex = styled.div`
   display: flex;

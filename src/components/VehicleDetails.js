@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
+
 import {
   Container,
   Button,
@@ -6,6 +8,7 @@ import {
   Input,
   InputField,
   InputLabel,
+  Select,
 } from '../styling/styles'
 import motive from '../Assets/motive-white.png'
 
@@ -17,6 +20,8 @@ const VehicleDetails = () => {
     carTrim: ' ',
   })
 
+  const { handleSubmit } = useForm()
+
   const handleChange = (e) => {
     setState({
       // ...state,
@@ -24,16 +29,22 @@ const VehicleDetails = () => {
     })
   }
 
+  const onSubmit = (data) => {
+    console.log(data)
+  }
+
+  // console.log()
+
   return (
     <Container>
       <div className='base-form'>
         <h1 style={{ textAlign: 'center', color: 'white' }}> Vehicle Info</h1>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <InputField>
             <Flex alignItems='center' justifyContent='space-between'>
               <InputLabel htmlFor='Year' children='Year' />
             </Flex>
-            <Input
+            <Select
               id='year'
               name='year'
               value={state.carYear}
@@ -44,13 +55,13 @@ const VehicleDetails = () => {
               <option value='2021'>2021</option>
               <option value='2020'>2020</option>
               <option value='2019'>2019</option>
-            </Input>
+            </Select>
           </InputField>
           <InputField>
             <div>
               <InputLabel htmlFor='Make' children='Make' />
             </div>
-            <Input
+            <Select
               id='make'
               name='make'
               value={state.carMake}
@@ -61,13 +72,13 @@ const VehicleDetails = () => {
               <option value='maserati'>Maserati</option>
               <option value='infinity'>Infinity</option>
               <option value='audi'>Audi</option>
-            </Input>
+            </Select>
           </InputField>
           <InputField>
             <div>
               <InputLabel htmlFor='Model' children='Model' />
             </div>
-            <Input
+            <Select
               id='model'
               name='model'
               value={state.carModel}
@@ -78,13 +89,13 @@ const VehicleDetails = () => {
               <option value='X3'>X3</option>
               <option value='X5'>X5</option>
               <option value='X7'>X7</option>
-            </Input>
+            </Select>
           </InputField>
           <InputField>
             <div>
               <InputLabel htmlFor='Trim' children='Trim' />
             </div>
-            <Input
+            <Select
               id='trim'
               name='trim'
               value={state.carTrim}
@@ -95,7 +106,7 @@ const VehicleDetails = () => {
               <option value='X3'>xDrive40e</option>
               <option value='X5'>xDrive40i</option>
               <option value='X7'>xDrive45e</option>
-            </Input>
+            </Select>
           </InputField>
           <Flex justifyContent='flex-end'>
             <Button children='Next' />

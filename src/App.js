@@ -2,13 +2,14 @@ import React from 'react'
 import './App.css'
 import VehicleDetails from './components/VehicleDetails'
 import { ApplicationRootStyles } from './styling/styles'
-import DateDetails from './components/DateDetails'
+import PersonalDetails from './components/PersonalDetails'
+import Confirmation from './components/Confirmation'
+import Scheduler from './components/Scheduler'
 
 function App() {
   return (
     <ApplicationRootStyles>
-      <VehicleDetails />
-      <DateDetails />
+      <Scheduler />
     </ApplicationRootStyles>
   )
 }
