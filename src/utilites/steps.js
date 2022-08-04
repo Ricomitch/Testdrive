@@ -1,0 +1,10 @@
+import React from 'react'
+
+export const STEPS = {
+  VEHICLE: 'VEHICLE_STEP',
+  SCHEDULER: 'SCHEDULER_STEP',
+  PERSONAL: 'PERSONAL_STEP',
+  REVIEW: 'REVIEW_STEP',
+  ERROR: 'ERROR_STEP',
+  SUCCESS: 'SUCCESS_STEP',
+}

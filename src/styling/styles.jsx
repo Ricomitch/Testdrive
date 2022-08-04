@@ -14,6 +14,19 @@ export const Input = styled.input`
   margin-bottom: 4px;
 `
 
+export const DatePicker = styled.input`
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 5px 0px;
+  padding: 0;
+  margin-bottom: 4px;
+`
+
 export const Select = styled.select`
   width: 100%;
   box-sizing: border-box;

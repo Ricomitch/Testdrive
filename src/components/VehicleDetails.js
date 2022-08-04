@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 
 import {
@@ -11,6 +11,8 @@ import {
   Select,
 } from '../styling/styles'
 import motive from '../Assets/motive-white.png'
+import { FormStepContext } from '../utilites/FormStepContext'
+import { STEPS } from '../utilites/steps'
 
 const VehicleDetails = () => {
   const [state, setState] = useState({
@@ -22,6 +24,8 @@ const VehicleDetails = () => {
 
   const { handleSubmit } = useForm()
 
+  const { step, setStep } = useContext(FormStepContext)
+
   const handleChange = (e) => {
     setState({
       // ...state,
@@ -30,6 +34,7 @@ const VehicleDetails = () => {
   }
 
   const onSubmit = (data) => {
+    setStep(STEPS.SCHEDULER)
     console.log(data)
   }
 

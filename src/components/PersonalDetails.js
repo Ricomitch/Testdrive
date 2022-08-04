@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import {
   Container,
@@ -10,6 +10,8 @@ import {
   InputError,
 } from '../styling/styles'
 import motive from '../Assets/motive-white.png'
+import { FormStepContext } from '../utilites/FormStepContext'
+import { STEPS } from '../utilites/steps'
 
 const PersonalDetails = () => {
   const {
@@ -18,7 +20,11 @@ const PersonalDetails = () => {
     formState: { errors },
   } = useForm()
 
+  const { setStep } = useContext(FormStepContext)
+
   const onSubmit = (data) => {
+    setStep(STEPS.SUCCESS)
+
     console.log(data)
   }
 
