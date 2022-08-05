@@ -1,3 +1,18 @@
 .App {
   font-family: 'Roboto', sans-serif;
 }
+
+#Path_39 {
+  animation: 1s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes path {
+  from {
+    transform: rotatez(0deg);
+  }
+  to {
+    transform: rotatez(360deg);
+  }
+}

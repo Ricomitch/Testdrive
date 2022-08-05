@@ -15,22 +15,28 @@ import { FormStepContext } from '../utilites/FormStepContext'
 import { STEPS } from '../utilites/steps'
 
 const VehicleDetails = () => {
-  const [state, setState] = useState({
+  const [vehicle, setVehicle] = useState({
     carYear: 0,
     carMake: ' ',
     carModel: ' ',
     carTrim: ' ',
   })
 
-  const { handleSubmit } = useForm()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
 
   const { step, setStep } = useContext(FormStepContext)
 
   const handleChange = (e) => {
-    setState({
-      // ...state,
+    setVehicle({
+      // ...vehicle,
       [e.target.name]: e.target.value,
     })
+    console.log(e)
   }
 
   const onSubmit = (data) => {
@@ -49,12 +55,8 @@ const VehicleDetails = () => {
             <Flex alignItems='center' justifyContent='space-between'>
               <InputLabel htmlFor='Year' children='Year' />
             </Flex>
-            <Select
-              id='year'
-              name='year'
-              value={state.carYear}
-              onChange={handleChange}
-            >
+            <Select id='year' {...register('year')}>
+              <option value='0'></option>
               <option value='2023'>2023</option>
               <option value='2022'>2022</option>
               <option value='2021'>2021</option>
@@ -66,12 +68,8 @@ const VehicleDetails = () => {
             <div>
               <InputLabel htmlFor='Make' children='Make' />
             </div>
-            <Select
-              id='make'
-              name='make'
-              value={state.carMake}
-              onChange={handleChange}
-            >
+            <Select id='make' {...register('make')}>
+              <option value='0'></option>
               <option value='mercedes'>Mercedes</option>
               <option value='bmw'>BMW</option>
               <option value='maserati'>Maserati</option>
@@ -83,12 +81,8 @@ const VehicleDetails = () => {
             <div>
               <InputLabel htmlFor='Model' children='Model' />
             </div>
-            <Select
-              id='model'
-              name='model'
-              value={state.carModel}
-              onChange={handleChange}
-            >
+            <Select id='model' {...register('model')}>
+              <option value='0'></option>
               <option value='340i'>340i</option>
               <option value='440i'>440i</option>
               <option value='X3'>X3</option>
@@ -100,12 +94,8 @@ const VehicleDetails = () => {
             <div>
               <InputLabel htmlFor='Trim' children='Trim' />
             </div>
-            <Select
-              id='trim'
-              name='trim'
-              value={state.carTrim}
-              onChange={handleChange}
-            >
+            <Select id='trim' {...register('trim')}>
+              <option value='0'></option>
               <option value='340i'>M50i</option>
               <option value='440i'>sDrive40i</option>
               <option value='X3'>xDrive40e</option>

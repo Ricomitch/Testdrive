@@ -1,7 +1,9 @@
 import React, { useState, useContext } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import { useForm } from 'react-hook-form'
+import { setMinutes, setHours } from 'date-fns'
+
+import { useForm, Controller } from 'react-hook-form'
 import {
   Container,
   Button,
@@ -18,9 +20,13 @@ import { STEPS } from '../utilites/steps'
 
 const Scheduler = () => {
   const [selectedDate, setSelectedDate] = useState(null)
-  const [value, onChange] = useState('10:00')
 
-  const { handleSubmit } = useForm()
+  const {
+    control,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
 
   const { setStep } = useContext(FormStepContext)
 
@@ -39,20 +45,50 @@ const Scheduler = () => {
             <Flex alignItems='center' justifyContent='space-between'>
               <InputLabel htmlFor='SelectDay' children='Select a Day' />
             </Flex>
-            <DatePicker
-              selected={selectedDate}
-              onChange={(date) => setSelectedDate(date)}
-              minDate={new Date('08-01-2022')}
-              maxDate={new Date('08-14-2022')}
+
+            <Controller
+              control={control}
+              name='date-input'
+              render={({ field }) => (
+                <DatePicker
+                  placeholderText='Select date'
+                  onChange={(date) => field.onChange(date)}
+                  selected={field.value}
+                  minDate={new Date('08-01-2022')}
+                  maxDate={new Date('08-14-2022')}
+
+                  // withPortal
+                />
+              )}
             />
           </InputField>
 
           <InputField>
             <Flex alignItems='center' justifyContent='space-between'>
               <InputLabel htmlFor='SelectTime' children='Select a Time' />
-            </Flex>{' '}
-            <Input></Input>
+            </Flex>
+
+            <Controller
+              control={control}
+              name='time-input'
+              render={({ field }) => (
+                <DatePicker
+                  dateFormat='hh:mm aa'
+                  placeholderText='Select time'
+                  onChange={(date) => field.onChange(date)}
+                  selected={field.value}
+                  showTimeSelect
+                  showTimeSelectOnly
+                  timeIntervals={30}
+                  timeCaption='time'
+                  minTime={setHours(setMinutes(new Date(), 0), 9)}
+                  maxTime={setHours(setMinutes(new Date(), 0), 17)}
+                  // withPortal
+                />
+              )}
+            />
           </InputField>
+
           <Flex justifyContent='flex-end'>
             <Button children='Next' />
           </Flex>

@@ -39,7 +39,7 @@ const Confirmation = () => {
               {' '}
               Confirmation
             </h1>
-            <img src={confirm} />
+            <img src={confirm} style={{ paddingLeft: '38%' }} />
             <br />
             <h2
               style={{ textAlign: 'center', color: 'white', fontSize: '30px' }}

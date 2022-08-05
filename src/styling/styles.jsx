@@ -46,7 +46,8 @@ export const InputLabel = styled.label`
   margin-top: 4px;
 `
 export const InputField = styled.div`
-  background-color: #1b1b1b;
+  background-color: #313131;
+
   box-sizing: border-box;
   border: 1px solid #808080;
   color: #ffffff;
