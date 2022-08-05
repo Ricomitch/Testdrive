@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Motive Test Drive Scheduler project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### To Run
 
-## Available Scripts
+-Clone down repo
+-Run git clone
+-CD into directory
+-Run NPM Install
+-Run NPM Start
 
-In the project directory, you can run:
+### Overview
 
-### `npm start`
+My goal was to pretend A client has requested that we add a page to their website for scheduling a test drive. The client wants it to be exciting for the customer.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React, JavaScript, HTML, CSS
 
-### `npm test`
+### Tech Requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Code Base
+  - Please create a new React app to work in for this project
+  - Use React v16.8+ and Node v14+
+  - Use Typescript if you are well-versed in it, otherwise use Javascript. If you do not know Typescript, please do not try to learn on this project.
+  - You may use any NPM packages that you see fit
+- Sharing Project
+  - Please create a public GitHub repo to allow us to access the project
+  - We expect to be able to clone your repo and run your app on our machines to review your work in a development environment
+  - You will be expected to screen-share while editing your code for the Zoom call where we discuss your project
+- Additional Notes
+  - If any usage of your app is not straightforward, please provide instruction in a `[README.md](http://README.md)` file
+  - This project should not rely on any API/third-party service. Everything should be contained within the React app including any static assets/mock data/etc.
+  - Normally this form submission would trigger an HTTP request. There is no backend, so please log the data to the console instead
+  - Please use functional components, not class components
+  - Include a `.gitignore` file
