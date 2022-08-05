@@ -13,10 +13,6 @@ const helper = (step) => {
       return <Scheduler />
     case STEPS.PERSONAL:
       return <PersonalDetails />
-    case STEPS.REVIEW:
-      return <h1>review</h1>
-    case STEPS.ERROR:
-      return <h1>error</h1>
     case STEPS.SUCCESS:
       return <Confirmation />
     default:

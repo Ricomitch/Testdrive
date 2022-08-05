@@ -10,8 +10,10 @@ import {
   InputError,
 } from '../styling/styles'
 import motive from '../Assets/motive-white.png'
-import confirm from '../Assets/finished-builder.svg'
+import confirm from '../Assets/finished-builder (1) 1.svg'
+
 import HashLoader from 'react-spinners/HashLoader'
+import '../App.css'
 
 const Confirmation = () => {
   const [loading, setLoading] = useState(false)
@@ -39,7 +41,9 @@ const Confirmation = () => {
               {' '}
               Confirmation
             </h1>
-            <img src={confirm} style={{ paddingLeft: '38%' }} />
+            <div>
+              <img src={confirm} style={{ paddingLeft: '38%' }} />
+            </div>
             <br />
             <h2
               style={{ textAlign: 'center', color: 'white', fontSize: '30px' }}

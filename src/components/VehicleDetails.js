@@ -15,13 +15,6 @@ import { FormStepContext } from '../utilites/FormStepContext'
 import { STEPS } from '../utilites/steps'
 
 const VehicleDetails = () => {
-  const [vehicle, setVehicle] = useState({
-    carYear: 0,
-    carMake: ' ',
-    carModel: ' ',
-    carTrim: ' ',
-  })
-
   const {
     register,
     handleSubmit,
@@ -30,14 +23,6 @@ const VehicleDetails = () => {
   } = useForm()
 
   const { step, setStep } = useContext(FormStepContext)
-
-  const handleChange = (e) => {
-    setVehicle({
-      // ...vehicle,
-      [e.target.name]: e.target.value,
-    })
-    console.log(e)
-  }
 
   const onSubmit = (data) => {
     setStep(STEPS.SCHEDULER)
@@ -96,11 +81,11 @@ const VehicleDetails = () => {
             </div>
             <Select id='trim' {...register('trim')}>
               <option value='0'></option>
-              <option value='340i'>M50i</option>
-              <option value='440i'>sDrive40i</option>
-              <option value='X3'>xDrive40e</option>
-              <option value='X5'>xDrive40i</option>
-              <option value='X7'>xDrive45e</option>
+              <option value='M50I'>M50i</option>
+              <option value='sDrive40i'>sDrive40i</option>
+              <option value='xDrive40e'>xDrive40e</option>
+              <option value='xDrive40i'>xDrive40i</option>
+              <option value='xDrive45e'>xDrive45e</option>
             </Select>
           </InputField>
           <Flex justifyContent='flex-end'>

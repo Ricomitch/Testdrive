@@ -19,8 +19,6 @@ import { FormStepContext } from '../utilites/FormStepContext'
 import { STEPS } from '../utilites/steps'
 
 const Scheduler = () => {
-  const [selectedDate, setSelectedDate] = useState(null)
-
   const {
     control,
     register,
@@ -46,11 +44,24 @@ const Scheduler = () => {
               <InputLabel htmlFor='SelectDay' children='Select a Day' />
             </Flex>
 
+            <style>
+              {`.date-picker input {
+                background-color: #313131;
+                color: #ffffff;
+                font-weight: bolder;
+                outline: none;
+                border: none;
+                width: 100%;
+
+          }`}
+            </style>
+
             <Controller
               control={control}
               name='date-input'
               render={({ field }) => (
                 <DatePicker
+                  wrapperClassName='date-picker'
                   placeholderText='Select date'
                   onChange={(date) => field.onChange(date)}
                   selected={field.value}
@@ -73,6 +84,7 @@ const Scheduler = () => {
               name='time-input'
               render={({ field }) => (
                 <DatePicker
+                  wrapperClassName='date-picker'
                   dateFormat='hh:mm aa'
                   placeholderText='Select time'
                   onChange={(date) => field.onChange(date)}
